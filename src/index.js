@@ -1,13 +1,13 @@
 import contractABI from "./abi.json";
 
 // 2️⃣ Set your smart contract address 👇
-const contractAddress = "";
+const contractAddress = "0x03e99BBc263992917d756AF220E7d72eff352967";
 
 let web3 = new Web3(window.ethereum);
 // 3️⃣ connect to the contract using web3
 // HINT: https://web3js.readthedocs.io/en/v1.2.11/web3-eth-contract.html#new-contract
 // let contract = YOUR CODE
-
+let contract = new web3.eth.Contract(contractABI, contractAddress);
 async function connectWallet() {
   console.log("Connecting to wallet...");
   if (window.ethereum) {
