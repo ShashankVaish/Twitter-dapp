@@ -1,7 +1,7 @@
 import contractABI from "./abi.json";
 
 // 2️⃣ Set your smart contract address 👇
-const contractAddress = "0x03e99BBc263992917d756AF220E7d72eff352967";
+const contractAddress = "0xE30d11b2C7345eC05A21f6510309275974F2DBfe";
 
 let web3 = new Web3(window.ethereum);
 // 3️⃣ connect to the contract using web3
@@ -48,6 +48,7 @@ async function createTweet(content) {
     // what is await? https://javascript.info/async-await
     // 7️⃣ Uncomment the displayTweets function! PRETTY EASY 🔥
     // GOAL: reload tweets after creating a new tweet
+    await contract.methods.createtweet(content).send({ from: accounts[0] });
     // displayTweets(accounts[0]);
   } catch (error) {
     console.error("User rejected request:", error);
