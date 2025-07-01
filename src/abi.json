@@ -74,7 +74,7 @@
         "type": "address"
       }
     ],
-    "name": "getAllTweets",
+    "name": "getalltweet",
     "outputs": [
       {
         "components": [
