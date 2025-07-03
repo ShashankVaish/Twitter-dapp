@@ -112,13 +112,15 @@ async function displayTweets(userAddress) {
 }
 
 function addLikeButtonListener(likeButton, address, id, author) {
+  
   likeButton.addEventListener("click", async (e) => {
     e.preventDefault();
 
     e.currentTarget.innerHTML = '<div class="spinner"></div>';
     e.currentTarget.disabled = true;
     try {
-      await likeTweet(author, id);
+      await contract.methods.liketweet(author, id).send({ from: address });
+      // 8️⃣ call the likeTweet function from smart contract
       displayTweets(address);
     } catch (error) {
       console.error("Error liking tweet:", error);
